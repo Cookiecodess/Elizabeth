@@ -1,0 +1,678 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Fira+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Fira+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Homepage */
+body {
+  font-family: "Calisto MT", Aldhabi, Georgia, serif;
+  background-color: #FFF4E0;
+  /* #e8dfcc */
+}
+
+footer {
+  color:black;
+  padding-left: 20px ;
+  padding-bottom:20px;
+  padding-top:50px;
+  font-family: Raleway;
+}
+
+.container {
+  position: relative;
+  overflow: auto;
+}
+
+a.nostyle {
+  /* ensures the "Overview" header don't behave like links */
+  color: #e8dfcc;
+}
+
+a.nostyle:hover {
+  text-decoration: none;
+  color: #e8dfcc;
+}
+
+h1 {
+  color: #583300;
+  text-align: center;
+  padding: 30px 30px 30px 30px;
+  font-size: 40px;   
+}
+
+h1:after {
+  content: url('vintage-graphic-1.svg');
+  display: block;
+  width: 160px;
+  height: auto;
+  margin: 0 auto;
+  filter: invert(16%) sepia(80%) saturate(1564%) hue-rotate(25deg) brightness(99%) contrast(103%);
+  /* To filter an SVG file to a specific color, use the following Codepen to convert a hexadecimal color code to a CSS filter:
+   * 
+  https://codepen.io/sosuke/pen/Pjoqqp
+   */
+}
+
+
+p {
+  color: #e8dfcc;
+  font-size: 18px;
+  text-transform: none;
+  text-align: justify;
+}
+
+:root {
+  --navheight: 80px;
+  --nav-item-padding: 20px 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: var(--navheight);
+  margin: 0 auto;
+  background: rgba(200, 200, 200, 0.01);
+  border: 0px solid;
+}
+
+
+
+.nav-item {
+  padding: 20px 30px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+/* dropdown menu */
+.left-section {
+  float: left;
+  color: #f5ead3;
+  border: 0px solid;
+  background-color: transparent;
+  z-index: 3;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.menu-button {
+  background-color: transparent;
+  border: none;
+  height: auto;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-family: "EB Garamond", serif;
+  font-size: 18px;
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition: background-color 0.2s ease-in-out;
+}
+
+.dropdown:hover .menu-button {
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+.dropdown-content {
+  opacity: 0;
+  background-color: transparent;
+  /* #ffd9fe */
+  padding-left: 0px;
+  position: absolute;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+}
+
+.dropdown-links {
+  display: block;
+  color: #f5ead3;
+  font-family: "EB Garamond", serif;
+  font-size: 18px;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-bottom: 1px solid;
+}
+
+.dropdown-links:hover {
+  color: #ffe08c;
+  background-color: rgba(240, 240, 240, 0.2);
+}
+
+/* This makes jump links direct you to the respective section while still respecting the height of the fixed header. */
+:target::before {
+  content: "";
+  display: block;
+  height: 80px;
+  /* fixed header height*/
+  margin: -80px 0 0;
+  /* negative fixed header height */
+}
+
+/* Thanks to the top answer in this link: 
+ * https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors 
+ */
+
+
+
+/*
+.dropdown:hover {
+  background-color: none;
+  color: none;
+  width: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-content-index {
+  display: block;
+}
+
+.dropdown {
+  min-width: 160px;
+  position: relative;
+  float: left;
+  text-align: center;
+}
+
+dropdown .bar-block .menu-button {
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px
+}
+
+dropdown .bar-block .dropdown-links {
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px
+}
+
+.dropdown-links:hover {
+  color: #e8dfcc !important;
+  background-color: #7E541E !important;
+}
+
+.menu-button {
+  color: #e8dfcc !important;
+  background-color: transparent !important;
+  font-size: 18px;
+}
+
+.dropdown:hover .menu-button {
+  color: #7E541E !important;
+  background-color: #e8dfcc !important;
+}
+
+.dropdown-content {
+  display: none;
+  color: #e8dfcc;
+  background-color: #7E541E;
+  z-index: 4;
+}
+
+.menu-button:hover .dropdown-content {
+  display: block;
+}
+
+.menu-button, .dropdown-links {
+  width: 100%;
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: Raleway;
+}
+
+dropdown button {
+  font-size: 24px !important
+} */
+
+/*.dropdown-content, .dropdown-content-index {
+  cursor: auto;
+  display: none;
+  position: absolute;
+  text-align: center;
+  min-width: 160px;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+/* .bar-block .bar-item {
+  width: 100%;
+  display: block;
+  padding: 8px 16px;
+  text-align: center;
+  border: none;
+  white-space: normal;
+  float: none;
+  outline: 0
+} */
+
+.menu {
+
+  float: left;
+}
+
+/* Logo */
+#logo-rose {
+  position: relative;
+  top: 30%;
+  left: 50%;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+/* <3 credits */
+.credits-toggle {
+  background-color: transparent;
+  border: none;
+  height: auto;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  z-index: 101;
+  /* places the button right on top of black credits */
+  font-family: "EB Garamond", serif;
+  font-size: 24px;
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition: background-color 0.2s ease-in-out;
+}
+
+.credits-toggle:hover {
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+.credits-toggle:active {
+  background-color: rgba(240, 240, 240, 0.7);
+}
+
+.credits-container {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /* posited just below hearts button */
+
+  background-color: black;
+  opacity: 0.8;
+  display: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+a.close-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+}
+
+.credits {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  overflow: scroll;
+}
+
+/* slideshow */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.slideshow>* {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  animation: 25s autoplay infinite linear;
+  opacity: 0.0;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+@keyframes autoplay {
+  0% {
+    opacity: 0.0
+  }
+
+  /* t=0s */
+  2% {
+    opacity: 1.0
+  }
+
+  /* t=0.5s */
+  22% {
+    opacity: 1.0
+  }
+
+  /* t=5.5s */
+  24% {
+    opacity: 0.0
+  }
+
+  /* t=6s */
+  100% {
+    opacity: 0.0
+  }
+
+  /* t=25s */
+}
+
+.slideshow>*:nth-child(1) {
+  animation-delay: 0s
+}
+
+.slideshow>*:nth-child(2) {
+  animation-delay: 5s
+}
+
+.slideshow>*:nth-child(3) {
+  animation-delay: 10s
+}
+
+.slideshow>*:nth-child(4) {
+  animation-delay: 15s
+}
+
+.slideshow>*:nth-child(5) {
+  animation-delay: 20s
+}
+
+/* caption in slideshow */
+.caption-container {
+  position: absolute;
+  bottom: 12%;
+  left: 5%;
+  padding-bottom: 0px;
+  background-color: rgba(255,255,255,0.6);
+}
+
+.caption {
+  color:black;
+  font-family: "Fredericka the Great";
+  font-size: 35px;
+  text-shadow: 2px 2px 2px pink;
+  
+
+}
+
+#reign-years {
+  font-size: 25px;
+  font-style: italic;
+}
+
+/*.caption-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* scroll-down hint */
+
+
+/* Slider */
+/* .radio {
+  display: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  top: 0;
+/* top: calc(-1 * var(--navheight)); */
+/* the above line used to work but for some reason now it doesnt. 
+   * keeping it so i can retrieve it someday if the new code doesnt work again.
+   */
+/* width: 100%;
+  height: 100vh;
+}
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #141414;
+}
+.img-container {
+  width: 100%;
+  height: 100vh;
+  animation: fade 3s infinite;
+}
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  opacity:0;
+  transition: opacity 1s;
+}
+.slider img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.slider .caption {
+  font-size: 50px;
+  color: white;
+  position: absolute;
+  top: 40vh;
+  left: 5%;
+  z-index: 3;
+}
+.dots {
+  width: 100%;
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dots label {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  margin: 0 10px;
+  border-radius: 50%;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.dots label:hover {
+  opacity: 0.7;
+}
+#radio-1:checked ~ #slide-1,
+#radio-2:checked ~ #slide-2,
+#radio-3:checked ~ #slide-3,
+#radio-4:checked ~ #slide-4 {
+  opacity: 1;
+}
+#radio-1:checked ~ #slide-1 img,
+#radio-2:checked ~ #slide-2 img,
+#radio-3:checked ~ #slide-3 img,
+#radio-4:checked ~ #slide-4 img {
+  transition: ;
+}
+
+*/
+
+/* credits (code for Overview in index.html) */
+.overview-container {
+  margin: 0 50px;
+}
+
+.single-chp-container {
+  border: 0px solid;
+}
+
+h2 {
+  text-align: center;
+  margin: auto 200px;
+  font-size: 32px;
+  border: 0px solid;
+  padding: 30px 30px 30px 30px;
+  clear: both;
+  position: relative;
+  top: 80px;
+}
+
+span.roman {
+  display: block;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.ugh {
+  overflow: auto;
+}
+
+.overview-images {
+
+  width: 25vw;
+  height: auto;
+  border: 1px solid;
+  color: #000000;
+  float: left;
+  object-fit: cover;
+  position: relative;
+  left:30px;
+}
+
+.overview-summaries {
+  margin: auto 0;
+  width: 25%;
+  height: auto;
+  border: 0px solid;
+  float: right;
+  color: #583300;
+  font-size: 18px;
+  opacity: 0.9;
+  position:relative;
+  right:50px;
+}
+
+/* the magic part */
+#ugh1 {
+  opacity: 0.0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#con1:hover #ugh1 {
+  opacity: 1.0;
+}
+
+#ugh2 {
+  opacity: 0.0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#con2:hover #ugh2 {
+  opacity: 1.0;
+}
+
+#ugh3 {
+  opacity: 0.0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#con3:hover #ugh3 {
+  opacity: 1.0;
+}
+
+#ugh4 {
+  opacity: 0.0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#con4:hover #ugh4 {
+  opacity: 1.0;
+}
+
+#ugh5 {
+  opacity: 0.0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#con5:hover #ugh5 {
+  opacity: 1.0;
+}
+
+/* Links */
+h2 a {
+  color: #9F5805;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  font-family: "EB Garamond", serif;
+}
+
+h2 a:visited {
+  color: #9F5805;
+  text-decoration: none;
+}
+
+h2 a:hover {
+  color: #583300;
+  text-decoration: none;
+
+}
+
+h2 a:active {
+  color: #583300;
+  text-decoration: none;
+
+}
+
+

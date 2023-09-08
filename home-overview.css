@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Fira+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+.overview-container {
+  margin: 0 50px;
+}
+
+.single-chp-container {
+  border: 0px solid;
+}
+
+h2 {
+  text-align: center;
+  margin: auto 200px;
+  font-size: 32px;
+  border: 0px solid;
+  padding: 30px 30px 30px 30px;
+  clear: both;
+  position: relative;
+  top: 80px;
+}
+
+span.roman {
+  display: block;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.ugh {
+  overflow: auto;
+}
+
+.overview-images {
+
+  width: 25vw;
+  height: auto;
+  border: 1px solid;
+  color: #e8dfcc;
+  float: left;
+  object-fit: cover;
+  position: relative;
+  left:30px;
+}
+
+.overview-summaries {
+  margin: auto 0;
+  width: 25%;
+  height: auto;
+  border: 0px solid;
+  float: right;
+  color: #e8dfcc;
+  font-size: 18px;
+  opacity: 0.9;
+  position:relative;
+  right:50px;
+}
+
+/* the magic part */
+#ugh1 {
+  opacity: 0.0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#con1:hover #ugh1 {
+  opacity: 1.0;
+}
+
+#ugh2 {
+  opacity: 0.0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#con2:hover #ugh2 {
+  opacity: 1.0;
+}
+
+#ugh3 {
+  opacity: 0.0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#con3:hover #ugh3 {
+  opacity: 1.0;
+}
+
+#ugh4 {
+  opacity: 0.0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#con4:hover #ugh4 {
+  opacity: 1.0;
+}
+
+#ugh5 {
+  opacity: 0.0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#con5:hover #ugh5 {
+  opacity: 1.0;
+}
+
+/* Links */
+h2 a {
+  color: rgba(255, 204, 230, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  font-family: "EB Garamond", serif;
+}
+
+h2 a:visited {
+  color: rgba(255, 204, 230, 0.7);
+  text-decoration: none;
+}
+
+h2 a:hover {
+  color: #e8dfcc;
+  text-decoration: none;
+
+}
+
+h2 a:active {
+  color: #bd9122;
+  text-decoration: none;
+
+}

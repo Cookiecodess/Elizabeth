@@ -1,23 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Page Title</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
-<style>
-</style>
-<script src=""></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenwich Palace | The Story of Elizabeth I</title>
+  <link rel="stylesheet" href="home-general.css">
+  <link rel="stylesheet" href="home-overview.css">
+  <link rel="icon" type="image/x-icon" href="Logo-rose.svg">
 </head>
+
 <body>
+  <nav>
 
-<img src="img_la.jpg" alt="LA" style="width:100%">
+    <div class="nav-item left-section">
+      <div class="dropdown">
+        <button class="menu-button">&#9776;</button>
+        <div class="dropdown-content">
+          <a class="dropdown-links" href="#Overview">Overview</a>
+          <a class="dropdown-links" href="chp1.html">Start reading &rarr;</a>
+          <!--
+            <a class="dropdown-links" href="chp3.html">III Rule</a>
+            <a class="dropdown-links" href="chp4.html">IV Disputes</a>
+            <a class ="dropdown-links" href="chp5.html">V Personal aspects</a>
+            -->
+        </div>
+      </div>
+    </div>
 
-<div class="">
-  <h1>This is a Heading</h1>
-  <p>This is a paragraph.</p>
-  <p>This is another paragraph.</p>
+
+    <div class="nav-item middle-section"><a href="#"><img id="logo-rose" src="Logo-rose.svg"></a></div>
+    <div class="nav-item right-section">
+      <button class="credits-toggle heart" onclick="openCredits()">&hearts;</button>
+      <div class="credits-container" id="credits-container">
+        <a href="JavaScript:void(0)" onclick="closeCredits()" class="credits-toggle close-btn">&times;</a>
+        <div class="credits">
+          <h1></h1>
+          <div >
+            In scenes unseen, a tale complete,<br>
+After the climax, a final treat.<br>
+Digital coins, a currency true,<br>
+In bits and bytes, they value accrue.<br>
+Praise and honor, a commendation,<br>
+Given to those of noble station.<br>
+What word am I, with twin delights,<br>
+In pixel’s glow and thespian nights?<br>
+Inscribe me in the bar that knows all,<br>
+And secrets therein shall enthrall.<br>
 </div>
 
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    function openCredits() {
+      document.getElementById("credits-container").style.display = "block";
+    }
+    function closeCredits() {
+      document.getElementById("credits-container").style.display = "none";
+    }
+    /* function openCredits() {
+      document.getElementById('credits-container').classList.toggle('creditsopen');
+    }
+    document.getElementById('heartsbutton').onclick = function(){
+      openCredits();
+    } */
+  </script>
+
+  <div class="container">
+
+    <div class="slideshow">
+      <div class="slides">
+        <img id="slide1" src="images/image1.png">
+        <div class="caption-container">
+          <div class="caption">
+            Meet Elizabeth Tudor,</br>
+            Queen of England. </br>
+            <span id="reign-years">1558-1603</span>
+          </div>
+        </div>
+      </div>
+      <div class="slides">
+        <img id="slide2" src="images/image2.png">
+        <div class="caption-container">
+          <div class="caption">
+            Meet Elizabeth Tudor,</br>
+            Queen of Prosperity. </br>
+            <span id="reign-years">1558-1603</span>
+          </div>
+        </div>
+      </div>
+      <div class="slides">
+        <img id="slide3" src="images/image3.png">
+        <div class="caption-container">
+          <div class="caption">
+            Meet Elizabeth Tudor,</br>
+            Queen of Wrath. </br>
+            <span id="reign-years">1558-1603</span>
+          </div>
+        </div>
+      </div>
+      <div class="slides">
+        <img id="slide4" src="https://i.pinimg.com/1200x/b5/17/da/b517da9ccc4efa2f06a763c92a923468.jpg">
+        <div class="caption-container">
+          <div class="caption">
+            Meet Elizabeth Tudor,</br>
+            Queen Of Valour. </br>
+            <span id="reign-years">1558-1603</span>
+          </div>
+        </div>
+      </div>
+      <div class="slides">
+        <img id="slide5" src="https://i.pinimg.com/564x/f4/52/1e/f4521e5369edf9156f76a8a1092950c3.jpg">
+        <div class="caption-container">
+          <div class="caption">
+            Meet Elizabeth Tudor,</br>
+            Her Royal Highness. </br>
+            <span id="reign-years">1558-1603</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end slideshow -->
+
+    <!-- will probably ditch this -->
+    <div class="scrolldown">
+      <div class="scrolldown-icon">&darr;</div>
+      <div class="scrolldown-text">scroll down</div>
+    </div>
+
+  </div>
+  <!-- end container -->
+
+  <h1><a name="Overview" class="nostyle overview">Overview</a></h1>
+
+  <div class="overview-container">
+
+    <div class="single-chp-container" id="con1">
+      <h2 class="chp-title"><a href="chp1.html"><span class="roman">I</span>The Beginning</a></h2>
+      <div class="ugh" id="ugh1">
+        <img src="images/image4.png" class="overview-images">
+        <div class="overview-summaries">Today, 420 years beyond her death, we dust off the archives and pull back the
+          veil of mysteries surrounding her.</br></br>This is...Elizabeth I, the final Tudor Monarch.</div>
+      </div>
+    </div>
+
+    <div class="single-chp-container" id="con2">
+      <h2><a href="chp2.html"><span class="roman">II</span>Elizabeth's Life</a></h2>
+      <div class="ugh" id="ugh2">
+        <img src="https://www.rct.uk/sites/default/files/329955-1350464449.jpg" class="overview-images">
+        <div class="overview-summaries">After her mother’s execution, her stepmother persuaded her father to restore her
+          to the line of succession. This allowed her to receive an education befitting an heir. However, she would have
+          to bide her time, as Edward and Mary Tudor would precede her in ascending the throne.</div>
+      </div>
+    </div>
+
+    <div class="single-chp-container" id="con3">
+      <h2><a href="chp3.html"><span class="roman">III</span>The Elizabethan Era</a></h2>
+      <div class="ugh" id="ugh3">
+        <img
+          src="https://media.istockphoto.com/id/491786489/vector/queen-elizabeth-i.jpg?s=612x612&w=0&k=20&c=DLDSyWEZiiH1hjiO8xLnc7DZjkuIoEWpnoyaG_wxvzU="
+          class="overview-images" alt="image here">
+        <div class="overview-summaries">Once Elizabeth ascended the throne, she assembled a large roster of capable
+          ministers. These ministers were integral in protecting her safety and ensuring the country ran well. With
+          their assistance, Elizabeth I was able to set the foundations of England becoming a global superpower.</div>
+      </div>
+    </div>
+
+    <div class="single-chp-container" id="con4">
+      <h2><a href="chp4.html"><span class="roman">IV</span>Notable Disputes</a></h2>
+      <div class="ugh" id="ugh4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-6u1FZNRb8tAXScNvWkb9ITTEkd0KpCLZVw&usqp=CAU"
+          class="overview-images" alt="image here">
+        <div class="overview-summaries">As a monarch, Elizabeth was prone to disputes, particularly those from other
+          countries. Both domestic and foreign affairs had to be handled tactfully. Unfortunately, despite her best
+          efforts, some of these conflicts would escalate.</div>
+      </div>
+    </div>
+
+    <div class="single-chp-container" id="con5">
+      <h2><a href="chp5.html"><span class="roman">V</span>Personal Aspects</a></h2>
+      <div class="ugh" id="ugh5">
+        <img src="https://www.worldhistory.org/img/c/p/1200x627/12449.jpg" class="overview-images" alt="image here">
+        <div class="overview-summaries">Elizabeth I had huge ambitions for change and remains one of England’s longest
+          reigning monarchs. Her passing was not an unexpected one. Yet as a fitting mark of the Tudor dynasty’s end,
+          she would quite literally go out with a bang.</div>
+      </div>
+    </div>
+
+  </div>
+
+
+
 </body>
+
+<footer>
+  &copy; The Elizabethan Team
+</footer>
+
 </html>

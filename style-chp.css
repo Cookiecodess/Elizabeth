@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Fira+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Fira+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+@media screen and (max-width: 800px) {
+  #expand:hover ~ img {
+    transform: scale(2.5);
+  }
+}
+@media screen and (max-width: 350px) {
+  .flip-text {
+    display: none;
+  }
+  .prevnext {
+    margin: 10px 0px 20px 0px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  /* font-size: 16px; */
+  font-family: "EB Garamond", serif;
+  background-color: #f5ead3;
+  
+}
+h1, h2, p {
+  padding: 10px 0px;
+}
+.chp-1 p {
+  color: black;
+  clear: none; /* this allows text to wrap around the table floating on the right */
+  padding-right: 5px;
+}
+p {
+  color: black;
+  clear: both; 
+  padding-right: 5px;
+  font-size: 20px;
+}
+p span {
+  color: #6b1206;
+  font-size: 400%;
+  font-family: "Fredericka the Great";
+  float: left;
+  position: relative;
+  top: 0;
+  margin-right: 7px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+h1 {
+  color: #6b1206;
+  font-weight: 600;
+  width: 100%;
+  border-bottom: 1px solid;
+  padding-bottom: 1px;
+}
+h2 {
+  font-size: 24px;
+}
+/* Images in div.main-content */
+
+/* ARCHIVE: style for imgs to float on the right 
+    .img-container {
+      max-width:200px;
+      height: 100%;
+      float:right; 
+      display: table;
+      clear: right;
+      padding: 5px 5px;
+      border: 0;
+    }
+*/
+.img-container {
+  display: block;
+}
+.img-container img {
+  position: relative;
+  max-width:400px;
+  padding: 5px 5px;
+  /* float:right; */
+  object-fit:cover;
+  z-index: 1;
+  transition: all 0.1s;
+
+  /* centers the image */
+  display: block; 
+  margin: 0 auto; 
+} 
+.multiple-img-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#expand{
+  position: relative;
+  float:right; 
+  width: 18px;
+  border: 0;
+  background-color: transparent;
+  border-radius: 3px;
+  padding: 5px 0;
+  z-index: 1;
+  /* filter: invert(100%) sepia(0%) saturate(7488%) hue-rotate(268deg) brightness(103%) contrast(107%); /* makes the svg white */
+}
+#expand:hover {
+  opacity: 0;
+  z-index: 9;
+}
+#expand:hover ~ img{
+  transform: scale(2.5);
+  /* translate: -300px 0; */
+  z-index: 5;
+}
+
+
+
+  /* Basic structure */
+.container {
+margin-top: var(--navheight);
+  padding-left: 20px;
+  padding-right: 20px;
+  width:100%;
+  z-index: 0;
+}
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.chp-nav {  
+  margin: 0 auto;
+  height: var(--navheight);
+width:100%;
+border: 0px solid;
+  z-index:10;
+}
+:root {
+  --navheight: 80px;
+}
+.main-content {
+  padding-top: 10px;
+  padding-left:10px;
+float: right;
+width:75%;
+border: 0px solid;
+}
+.side-nav {
+  position: fixed;
+  padding-top: 30px;
+float: left;
+width:24%;
+  height: 75%;
+border: 0px solid;
+}
+.infobar {
+  display: inline-block;
+border: 5px solid;
+}
+footer {
+clear: both;
+width: 100%;
+border: 0px solid;
+}
+
+/* Links */
+a:link {
+  text-decoration: none;
+  padding: 0;
+  color: #a68235; 
+}
+a:visited {
+  color: #8f6f2e;
+} 
+a:hover {
+  text-decoration: underline;  
+}
+a:active {
+  color: #403111;
+}
+
+/* Top nav bar */ 
+.chp-nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  background: #403111;
+}
+.nav-item {
+  height: var(--navheight);
+}
+
+.left-section {
+  float: left;
+  color: #f5ead3; 
+  border:0px solid;
+  background-color: transparent;
+  z-index: 2;
+}
+.menu-button {
+  background-color: transparent;
+  border: none;
+  height: var(--navheight);
+  color:#f0c15d;
+  padding-left:20px;
+  padding-right: 20px;
+  font-family:Raleway,sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 140px;
+}
+.dropdown-content {
+  display: none;
+  background-color: #403111;/* #ffd9fe */
+  position: absolute;
+  min-width: 140px;
+}
+.dropdown-links {
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 5px;
+  border-bottom: 0px solid;
+}
+.dropdown-links:link {
+  color: #f0c15d; /* #f5ead3 */
+}
+.dropdown-links:visited {
+  color: #f0c15d; /* #f5ead3 */
+}
+.dropdown-links:hover {
+  background-color: rgba(240,240,240,0.2); /* #f5ead3 */
+  text-decoration: none;
+}
+.dropdown-links:active {
+  color: #c79f4c; /* #f5ead3 */
+  background-color: rgba(240,240,240,0.1);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .menu-button {
+  background-color: rgba(240,240,240,0.5);
+}
+
+.bar-block .bar-item {
+  display:block;
+  padding:8px 16px;
+}
+
+.middle-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: absolute;
+  left:50%;
+  /*padding: 20px 30px;
+  position: absolute;
+left:50%;
+right:50%;
+Top:0; */
+}
+#logo-rose {
+  position: relative;
+  height:1.5em;
+  width:1.5em;
+
+}
+#logo-rose:hover {
+  filter: invert(45%) sepia(10%) saturate(5544%) hue-rotate(322deg) brightness(93%) contrast(94%);
+}
+
+
+.right-section {
+  display: flex;
+  justify-content: space-between;
+}
+a.prevnext {
+  border: 0px solid;
+  vertical-align: middle;
+  margin: 10px 10px 20px 10px;
+  padding: 8px 15px 0px 15px;
+  font-size: 24px;
+  color: #f0c15d;
+
+  transition: background-color 0.2s ease-in-out;
+}
+a.prevnext:hover {
+  text-decoration: none;
+  color: #ffde96;
+  background-color: rgba(240,240,240,0.5);
+}
+a.prevnext:active {
+  text-decoration: none;
+  color: #ffde96;
+  background-color: rgba(240,240,240,0.25);
+}
+.flip-text {
+  font-size: 18px;
+  font-family: Raleway, sans-serif;
+  font-weight: regular;
+  letter-spacing: 1px;
+  color: #f0c15d;
+  padding-top: 24px;
+  padding-bottom: 0px;
+}
+
+
+a.nostyle { /* ensures subtopic titles don't behave like links */
+  color: #734a2d;
+}
+a.nostyle:hover {
+  text-decoration: none;
+  color: #734a2d;
+}
+
+/* Side-nav */
+.side-nav {
+  font-style: italic;
+  overflow-y: scroll;
+  
+}
+.side-nav div {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+.side-nav ul {
+  list-style: none;
+  padding: 5px 10px;
+}
+.side-nav ul li {
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+.side-nav ul ul li {
+  padding-left: 10px;
+}
+.side-nav ul ul ul li {
+  padding-left: 15px;
+}
+
+/* .side-nav ul li.top {
+  padding-bottom: 10px;
+  color: #ef0b0b;
+} */
+
+
+/* This makes jump links direct you to the respective section while still respecting the height of the fixed header. */ 
+:target::before {
+  content: "";
+  display: block;
+  height: 80px; /* fixed header height*/
+  margin: -80px 0 0; /* negative fixed header height */
+}
+/* Thanks to the top answer in this link: 
+ * https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors 
+ */
+
+/* Tables */
+table {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  float: right;
+  width: 300px;
+}
+table, th, td {
+  padding: 5px;
+  background-color: #734a2d; 
+}
+th, td {
+  color: white;
+  vertical-align: top;
+}
+th {
+  background-color: #a67f63;
+  text-align: center;
+  font-weight: bold-italic;
+}
+
+td {
+  text-align: left;
+  font-weight: regular;
+}
+td.rowname {
+  font-weight: bold;
+}
+
+/* BOTTOM CHAPTER NAV */
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* FOOTER */
+footer {
+  height: 80px;
+  padding: 10px;
+  margin-top: 50px;
+  background-color: #734a2d;
+  color: white;
+  font-family: Raleway;
+  font-size: 12px;
+  width: 100%;
+}
